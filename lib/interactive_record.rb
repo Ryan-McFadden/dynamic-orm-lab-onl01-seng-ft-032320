@@ -34,7 +34,7 @@ class InteractiveRecord
   end
   
   def save
-    DB[:conn].execute
+    DB[:conn].execute("INSERT INTO #{table_name_for_insert}")
   end
   
   def table_name_for_insert
