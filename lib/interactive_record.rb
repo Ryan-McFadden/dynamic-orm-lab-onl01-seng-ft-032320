@@ -19,6 +19,7 @@ class InteractiveRecord
     info.each do |column|
       column_names << column["name"]
     end
+    
     column_names.compact
   end
   
@@ -37,8 +38,11 @@ class InteractiveRecord
   end
   
   def column_name_for_insert
-    self.class.column_names.delete_if do |col|
-      col = id
+    info = self.class.column_names.delete_if do |col|
+      col == "id"
+    end
+    
+    info.join(", ")
   end
   
 end
