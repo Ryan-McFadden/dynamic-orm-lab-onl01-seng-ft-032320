@@ -33,6 +33,10 @@ class InteractiveRecord
     end
   end
   
+  def save
+    DB[:conn].execute
+  end
+  
   def table_name_for_insert
     self.class.table_name
   end
