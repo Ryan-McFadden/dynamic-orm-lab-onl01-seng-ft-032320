@@ -49,7 +49,7 @@ class InteractiveRecord
     
     values = []
     
-    
+    self.class.column_names.each do |col|
   end
   
 end
