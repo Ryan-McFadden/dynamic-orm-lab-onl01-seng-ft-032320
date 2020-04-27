@@ -56,7 +56,7 @@ class InteractiveRecord
   def self.find_by(hash)
     
     col_name = hash.key.to_s
-    val_name = 
+    val_name = hash.value
     
     sql = <<-SQL
       
