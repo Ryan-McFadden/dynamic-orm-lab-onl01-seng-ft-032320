@@ -44,7 +44,7 @@ class InteractiveRecord
       col == "id"
     end
     
-    join(", ")
+    info.join(", ")
   end
   
   def values_for_insert
