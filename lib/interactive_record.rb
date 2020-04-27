@@ -59,8 +59,11 @@ class InteractiveRecord
     val_name = hash.value
     
     sql = <<-SQL
-      
+      SELECT * FROM #{table_name}
+      WHERE #{col_name} = ?
       SQL
+      
+    DB[:conn].execute(sql, val_name)
       
   end
   
