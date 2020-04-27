@@ -8,6 +8,7 @@ class InteractiveRecord
   end
   
   def self.column_names
+    
     DB[:conn].results_as_hash = true
     
     sql = "PRAGMA table_info('#{table_name}')"
@@ -24,12 +25,14 @@ class InteractiveRecord
   end
   
   def initialize(options = {})
+    
     options.each do |key, value|
       self.send("#{key}=", value)
     end
   end
   
   def save
+    
     DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES ?", values_for_insert)
     
     @id = DB[:conn].execute("SELECT last_insert_rowid FROM #{table_name_for_insert}")
@@ -40,6 +43,7 @@ class InteractiveRecord
   end
   
   def col_names_for_insert
+    
     info = self.class.column_names.delete_if do |col|
       col == "id"
     end
