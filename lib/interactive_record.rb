@@ -36,7 +36,7 @@ class InteractiveRecord
     
   end
   
-  def save
+  def 
     
   end
   
