@@ -19,9 +19,7 @@ class InteractiveRecord
     info.each do |column|
       column_names << column["name"]
     end
-    
     column_names.compact
-    
   end
   
   self.column_names.each do |name|
@@ -29,14 +27,12 @@ class InteractiveRecord
   end
   
   def initialize(options = {})
-    
     options.each do |key, value|
       self.send("#{key}=", value)
     end
-    
   end
   
-  def 
+  def table_name_for_insert
     
   end
   
