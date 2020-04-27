@@ -40,10 +40,9 @@ class InteractiveRecord
   end
   
   def column_name_for_insert
-    info = self.class.column_names.delete_if do |col|
+    self.class.column_names.delete_if  |col|
       col == "id"
     end
-    join(", ")
   end
   
   def values_for_insert
