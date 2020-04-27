@@ -50,6 +50,7 @@ class InteractiveRecord
     values = []
     
     self.class.column_names.each do |col|
+      values << self.send(col["name"])
   end
   
 end
