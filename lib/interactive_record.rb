@@ -15,6 +15,8 @@ class InteractiveRecord
     info = DB[:conn].execute(sql)
     
     column_names = []
+    
+    
   end
   
 end
