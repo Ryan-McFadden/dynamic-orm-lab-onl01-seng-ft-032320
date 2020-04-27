@@ -28,4 +28,8 @@ class InteractiveRecord
     attr_accessor name.to_sym
   end
   
+  def initialize(options = {})
+    
+  end
+  
 end
