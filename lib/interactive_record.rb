@@ -55,6 +55,8 @@ class InteractiveRecord
   
   def self.find_by
     
+    sql = <<-SQL
+      
   end
   
   def table_name_for_insert
